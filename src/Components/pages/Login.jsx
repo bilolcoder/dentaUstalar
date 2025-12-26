@@ -68,7 +68,7 @@ const Login = () => {
                                 <input
                                     type="text"
                                     {...register('username', { required: 'Bu maydon toʻldirilishi shart' })}
-                                    className="w-full px-4 py-3 rounded-lg bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 focus:ring-2 focus:ring-blue-500 outline-none transition-all"
+                                    className="w-full px-4 py-3 rounded-lg bg-white border border-gray-200 dark:border-gray-700 focus:ring-2 focus:ring-blue-500 outline-none transition-all"
                                     placeholder="111"
                                 />
                                 {errors.username && <p className="text-red-500 text-xs mt-1">{errors.username.message}</p>}
@@ -82,7 +82,7 @@ const Login = () => {
                                     <input
                                         type={showPassword ? "text" : "password"}
                                         {...register('password', { required: 'Bu maydon toʻldirilishi shart' })}
-                                        className="w-full px-4 py-3 rounded-lg bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 focus:ring-2 focus:ring-blue-500 outline-none transition-all pr-10"
+                                        className="w-full px-4 py-3 rounded-lg bg-white border border-gray-200 dark:border-gray-700 focus:ring-2 focus:ring-blue-500 outline-none transition-all pr-10"
                                         placeholder="111"
                                     />
                                     <button
