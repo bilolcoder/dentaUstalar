@@ -16,7 +16,7 @@ import Shartnoma from "./Components/pages/Shartnoma";
 import FaolElonlar from "./Components/ClickOpenPages/FaolElonlar";
 import Bugun from "./Components/ClickOpenPages/Bugun";
 import Rejalashtirilgan from "./Components/ClickOpenPages/Rejalashtirilgan";
-import Yakunlangan from "./Components/ClickOpenPages/yakunlangan";
+import Yakunlangan from "./Components/ClickOpenPages/Yakunlangan";
 import Bekorqilingan from "./Components/ClickOpenPages/BekorQilingan";
 import Kelmagan from "./Components/ClickOpenPages/Kelmagan";
 import JamiStamatologlar from "./Components/ClickOpenPages/JamiStmatologlar";
