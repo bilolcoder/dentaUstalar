@@ -89,7 +89,7 @@ export default function Qabullar() {
                 <th className="px-6 py-4 text-xs font-medium text-gray-600 uppercase tracking-wider">Sana / Vaqt</th>
                 <th className="px-6 py-4 text-xs font-medium text-gray-600 uppercase tracking-wider">Holat</th>
                 <th className="px-6 py-4 text-xs font-medium text-gray-600 uppercase tracking-wider">Izoh</th>
-                <th className="px-6 py-4 text-right text-xs font-medium text-gray-600 uppercase tracking-wider">Amallar</th>
+                {/* <th className="px-6 py-4 text-right text-xs font-medium text-gray-600 uppercase tracking-wider">Amallar</th> */}
               </tr>
             </thead>
             <tbody className="divide-y divide-gray-100 bg-white">
@@ -118,16 +118,6 @@ export default function Qabullar() {
                   </td>
                   <td className="px-6 py-4 text-sm text-gray-600 italic">
                     {item.note || <span className="text-gray-300">—</span>}
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap text-right">
-                    <div className="flex items-center justify-end gap-2">
-                      <button title="Tahrirlash" className="p-2 text-indigo-600 hover:bg-indigo-100 rounded-lg transition">
-                        <Edit2 className="w-4 h-4 md:w-5 md:h-5" />
-                      </button>
-                      <button title="O'chirish" className="p-2 text-red-600 hover:bg-red-100 rounded-lg transition">
-                        <Trash2 className="w-4 h-4 md:w-5 md:h-5" />
-                      </button>
-                    </div>
                   </td>
                 </tr>
               ))}

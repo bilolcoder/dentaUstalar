@@ -87,7 +87,7 @@ const Asbobuskunalar = () => {
       <div className="bg-white rounded-[30px] shadow-sm overflow-hidden border border-white">
         <div className="px-8 py-6 flex justify-between items-center border-b border-gray-50">
           <h3 className="text-xl font-bold text-[#2B3674]">E'lonlar boshqaruvi</h3>
-          <button className="text-[#4318FF] text-sm font-bold hover:underline">Hammasini ko'rish</button>
+          {/* <button className="text-[#4318FF] text-sm font-bold hover:underline">Hammasini ko'rish</button> */}
         </div>
 
         <div className="overflow-x-auto">
@@ -100,7 +100,7 @@ const Asbobuskunalar = () => {
                 <th className="px-6 py-5">Holati</th>
                 <th className="px-6 py-5 text-center">Ko'rishlar</th>
                 <th className="px-6 py-5">Status</th>
-                <th className="px-8 py-5 text-right">Amallar</th>
+                {/* <th className="px-8 py-5 text-right">Amallar</th> */}
               </tr>
             </thead>
             <tbody className="divide-y divide-gray-50">
@@ -124,13 +124,6 @@ const Asbobuskunalar = () => {
                     <span className={`px-3 py-1 rounded-lg text-xs font-bold ${getStatusStyle(item.holat)}`}>
                       {item.holat}
                     </span>
-                  </td>
-                  <td className="px-8 py-5">
-                    <div className="flex items-center justify-end gap-2">
-                      <button className="p-2 text-[#A3AED0] hover:text-[#4318FF] hover:bg-indigo-50 rounded-xl transition-all"><Eye size={18} /></button>
-                      <button className="p-2 text-[#A3AED0] hover:text-emerald-500 hover:bg-emerald-50 rounded-xl transition-all"><Edit2 size={18} /></button>
-                      <button className="p-2 text-[#A3AED0] hover:text-rose-500 hover:bg-rose-50 rounded-xl transition-all"><Trash2 size={18} /></button>
-                    </div>
                   </td>
                 </tr>
               ))}

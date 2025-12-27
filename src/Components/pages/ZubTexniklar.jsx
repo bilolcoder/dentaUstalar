@@ -86,7 +86,7 @@ export default function Zubtexniklar() {
             <table className="w-full min-w-[1000px]">
               <thead className="bg-gray-50/50">
                 <tr>
-                  {["Ism / Email", "Mutaxassislik", "Telefon", "Baho", "Holat", "Sana", "Amallar"].map((h) => (
+                  {["Ism / Email", "Mutaxassislik", "Telefon", "Baho", "Holat", "Sana"].map((h) => (
                     <th key={h} className="px-6 py-4 text-left text-[11px] font-bold text-gray-400 uppercase tracking-wider">
                       {h}
                     </th>
@@ -125,16 +125,6 @@ export default function Zubtexniklar() {
                     <td className="px-6 py-4 whitespace-nowrap">
                       <p className="text-[12px] font-medium text-gray-600">{tech.date}</p>
                       <p className="text-[10px] text-gray-400">Tugash: {tech.comDate}</p>
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-right">
-                      <div className="flex items-center justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
-                        <button className="p-2 text-indigo-600 hover:bg-indigo-100 rounded-lg transition-colors">
-                          <Edit2 className="w-4 h-4" />
-                        </button>
-                        <button className="p-2 text-red-600 hover:bg-red-100 rounded-lg transition-colors">
-                          <Trash2 className="w-4 h-4" />
-                        </button>
-                      </div>
                     </td>
                   </tr>
                 ))}
