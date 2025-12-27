@@ -107,11 +107,10 @@ export default function Zubtexniklar() {
                           <p className="text-xs text-gray-400 truncate">{tech.email}</p>
                         </div>
                       </div>
-                    </td>  
+                    </td>
 
                     <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-600">{tech.specialty}</td>
                     <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{tech.phone}</td>
-                    {/* <td className="px-6 py-4 whitespace-nowrap text-sm font-black text-gray-700">{tech.patients}</td> */}
                     <td className="px-6 py-4 whitespace-nowrap">
                       <div className="flex items-center gap-1">
                         <span className="text-yellow-400 text-lg">★</span>
