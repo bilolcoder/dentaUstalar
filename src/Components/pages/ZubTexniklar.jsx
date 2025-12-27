@@ -1,7 +1,11 @@
 import React, { useState } from "react";
 import { Search, Bell, Edit2, Trash2, Menu, X } from "lucide-react";
+import { useNavigate } from "react-router-dom";
+import { FaRegBell } from "react-icons/fa6";
+import { IoSearch } from "react-icons/io5";
 
 export default function Zubtexniklar() {
+  const navigate = useNavigate()
   const technicians = [
     { id: 1, name: "Dr. Aliyev Jamshid", email: "j.aliyev@example.com", specialty: "Protezchi", phone: "+998 99 111-44-56", patients: 128, rating: 4.9, status: "Faol", date: "24-Yan.2025", comDate: "12-Dek.2025", color: "indigo" },
     { id: 2, name: "Dr. Karimova Malika", email: "m.karimova@example.com", specialty: "Ortodont", phone: "+998 91 234-56-78", patients: 205, rating: 4.2, status: "Faol", date: "22-Dek.2025", comDate: "12-Dek.2025", color: "purple" },
@@ -34,32 +38,34 @@ export default function Zubtexniklar() {
           <p className="text-xs md:text-sm text-gray-500 uppercase tracking-wider">Tizim statistikasi</p>
           <h1 className="text-2xl md:text-3xl font-bold text-gray-900 leading-tight">Stomatologlar</h1>
         </div>
-
-        <div className="flex items-center gap-3 w-full sm:w-auto">
-          <div className="relative flex-1 sm:flex-none">
-            <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 w-4 h-4" />
-            <input
-              placeholder="Qidirish..."
-              className="pl-9 pr-4 py-2 w-full sm:w-48 lg:w-64 bg-white border border-gray-200 rounded-full text-sm focus:ring-2 focus:ring-indigo-500 outline-none transition-all"
-            />
-          </div>
-          <button className="p-2 bg-white border border-gray-200 rounded-full relative hover:bg-gray-50">
-            <Bell className="w-5 h-5 text-gray-600" />
-            <span className="absolute top-1.5 right-1.5 w-2 h-2 bg-red-500 rounded-full border border-white"></span>
-          </button>
-          <div className="w-9 h-9 shrink-0 rounded-full bg-gradient-to-br from-indigo-500 to-purple-600 ring-4 ring-indigo-50" />
-        </div>
+                <div className="flex items-center bg-white rounded-full shadow-md px-4 py-2 gap-4
+                    w-full md:w-[350px] md:hover:md:w-[73%]
+                    transition-all duration-700 h-[50px]">
+                <IoSearch />
+                    <input
+                        type="text"
+                        placeholder="Search"
+                        className="flex-1 bg-transparent outline-none text-[#707EAE] placeholder-[#A3AED0]"
+                    />
+                    <FaRegBell />
+                    <img
+                        src="https://i.pravatar.cc/100"
+                        alt="user"
+                        className="w-[36px] h-[36px] rounded-full object-cover"
+                    />
+                </div>
       </header>
 
       {/* STATS - Responsive Grid */}
       <div className="px-4 md:px-8 grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-5 mb-8">
         {[
-          { label: "Jami stomatologlar", val: "225", trend: "+23 ta" },
-          { label: "Faol", val: "156" },
-          { label: "Kutilmoqda", val: "34" },
-          { label: "Nofaol", val: "35" },
+          { label: "Jami stomatologlar", val: "225", trend: "+23 ta", path: "/jamistamatologlar" },
+          { label: "Faol", val: "156", path: "/faol" },
+          { label: "Kutilmoqda", val: "34", path: "/kutilmoqda" },
         ].map((item, i) => (
-          <div key={i} className="bg-white rounded-2xl p-4 md:p-5 border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+          <div key={i}
+          onClick={() => navigate(item.path)}
+          className="bg-white rounded-2xl p-4 md:p-5 border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
             <p className="text-xs md:text-sm text-gray-500 font-medium mb-1">{item.label}</p>
             <div className="flex items-end justify-between">
               <p className="text-2xl md:text-4xl font-bold text-gray-900">{item.val}</p>
@@ -80,7 +86,7 @@ export default function Zubtexniklar() {
             <table className="w-full min-w-[1000px]">
               <thead className="bg-gray-50/50">
                 <tr>
-                  {["Ism / Email", "Mutaxassislik", "Telefon", "Bemorlar", "Baho", "Holat", "Sana", "Amallar"].map((h) => (
+                  {["Ism / Email", "Mutaxassislik", "Telefon", "Baho", "Holat", "Sana", "Amallar"].map((h) => (
                     <th key={h} className="px-6 py-4 text-left text-[11px] font-bold text-gray-400 uppercase tracking-wider">
                       {h}
                     </th>
@@ -101,11 +107,11 @@ export default function Zubtexniklar() {
                           <p className="text-xs text-gray-400 truncate">{tech.email}</p>
                         </div>
                       </div>
-                    </td>
+                    </td>  
 
                     <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-600">{tech.specialty}</td>
                     <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{tech.phone}</td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm font-black text-gray-700">{tech.patients}</td>
+                    {/* <td className="px-6 py-4 whitespace-nowrap text-sm font-black text-gray-700">{tech.patients}</td> */}
                     <td className="px-6 py-4 whitespace-nowrap">
                       <div className="flex items-center gap-1">
                         <span className="text-yellow-400 text-lg">★</span>
@@ -136,7 +142,7 @@ export default function Zubtexniklar() {
               </tbody>
             </table>
           </div>
-          
+
           {/* Mobil foydalanuvchilar uchun eslatma */}
           <div className="lg:hidden px-6 py-3 bg-gray-50 text-[10px] text-gray-400 text-center border-t border-gray-100 italic">
             To'liq ma'lumot uchun jadvalni o'ngga suring

@@ -13,6 +13,14 @@ import QolganMaxsulotlar from "./Components/ClickOpenPages/QolganMaxsulotlar";
 import NoFaol from "./Components/ClickOpenPages/Nofaol";
 import DasturTolovi from "./Components/ClickOpenPages/DasturTolovi";
 import Shartnoma from "./Components/pages/Shartnoma";
+import FaolElonlar from "./Components/ClickOpenPages/FaolElonlar";
+import Bugun from "./Components/ClickOpenPages/Bugun";
+import Rejalashtirilgan from "./Components/ClickOpenPages/Rejalashtirilgan";
+import Yakunlangan from "./Components/ClickOpenPages/yakunlangan";
+import Bekorqilingan from "./Components/ClickOpenPages/BekorQilingan";
+import Kelmagan from "./Components/ClickOpenPages/Kelmagan";
+import JamiStamatologlar from "./Components/ClickOpenPages/JamiStmatologlar";
+import Kutilmoqda from "./Components/ClickOpenPages/Kutilmoqda";
 
 const App = () => {
   return (
@@ -33,6 +41,15 @@ const App = () => {
         <Route path="/qolganmaxsulotlar" element={<QolganMaxsulotlar />} />
         <Route path="/nofaol" element={<NoFaol />} />
         <Route path="/dasturtolovi" element={<DasturTolovi />} />
+        <Route path="/faolelonlar" element={<FaolElonlar />} />
+        <Route path="/qolganmahsulotlar" element={<QolganMaxsulotlar />} />
+        <Route path="/bugun" element={<Bugun />} />
+        <Route path="/rejalashtirilgan" element={<Rejalashtirilgan />} />
+        <Route path="/yakunlangan" element={<Yakunlangan />} />
+        <Route path="/bekorqilingan" element={<Bekorqilingan />} />
+        <Route path="/kelmagan" element={<Kelmagan />} />
+        <Route path="/jamistamatologlar" element={<JamiStamatologlar />} />
+        <Route path="/kutilmoqda" element={<Kutilmoqda />} />
       </Route>
 
       {/* 3. Foydalanuvchi boshqa yo'l yozsa, login sahifasiga yuboramiz */}

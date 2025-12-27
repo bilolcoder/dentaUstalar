@@ -1,12 +1,16 @@
 import React, { useState } from 'react';
 // Xatolikni oldini olish uchun faqat Lucide-react ishlatamiz
-import { 
-  Search, Bell, Eye, Edit2, Trash2, 
-  CheckCircle, XCircle, Filter, ChevronRight 
+import {
+  Search, Bell, Eye, Edit2, Trash2,
+  CheckCircle, XCircle, Filter, ChevronRight
 } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
+import { IoSearch } from 'react-icons/io5';
+import { FaRegBell } from 'react-icons/fa6';
 
 const Asbobuskunalar = () => {
   const [searchTerm, setSearchTerm] = useState('');
+  const navigate = useNavigate()
 
   // Figma dizayniga moslashtirilgan ma'lumotlar
   const equipmentData = [
@@ -28,7 +32,7 @@ const Asbobuskunalar = () => {
 
   return (
     <div className="bg-[#F4F7FE] min-h-screen p-4 md:p-8 font-sans text-[#2B3674]">
-      
+
       {/* HEADER SECTION - Figma Style */}
       <header className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-10">
         <div>
@@ -36,35 +40,35 @@ const Asbobuskunalar = () => {
           <h2 className="text-3xl font-bold text-[#2B3674]">Asbob uskunalar bozori</h2>
         </div>
 
-        <div className="flex items-center bg-white rounded-3xl shadow-sm p-2 gap-2 border border-gray-50">
-          <div className="flex items-center bg-[#F4F7FE] rounded-2xl px-4 py-2 md:w-64">
-            <Search className="w-4 h-4 text-[#A3AED0]" />
-            <input
-              type="text"
-              placeholder="Qidiruv..."
-              className="bg-transparent outline-none text-sm px-2 w-full placeholder-[#8F9BBA]"
-              onChange={(e) => setSearchTerm(e.target.value)}
-            />
-          </div>
-          <button className="relative p-2 text-[#A3AED0] hover:text-[#4318FF]">
-            <Bell size={22} />
-            <span className="absolute top-2 right-2 w-2 h-2 bg-rose-500 rounded-full border-2 border-white"></span>
-          </button>
-          <div className="w-10 h-10 rounded-full border-2 border-white shadow-sm overflow-hidden">
-            <img src="https://i.pravatar.cc/100?img=12" alt="admin" />
-          </div>
-        </div>
+        <div className="flex items-center bg-white rounded-full shadow-md px-4 py-2 gap-4
+                            w-full md:w-[350px] md:hover:md:w-[63%]
+                            transition-all duration-700 h-[50px]">
+                        <IoSearch />
+                            <input
+                                type="text"
+                                placeholder="Search"
+                                className="flex-1 bg-transparent outline-none text-[#707EAE] placeholder-[#A3AED0]"
+                            />
+                            <FaRegBell />
+                            <img
+                                src="https://i.pravatar.cc/100"
+                                alt="user"
+                                className="w-[36px] h-[36px] rounded-full object-cover"
+                            />
+                        </div>
       </header>
 
       {/* STATISTICS CARDS - Figma Style */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
         {[
-          { label: "Jami mahsulotlar", value: "225", trend: "+23 ta", color: "bg-indigo-50 text-indigo-600" },
-          { label: "Faol e'lonlar", value: "156", trend: null, color: "bg-emerald-50 text-emerald-600" },
-          { label: "Qolgan mahsulotlar", value: "34", trend: null, color: "bg-amber-50 text-amber-600" },
-          { label: "Nofaol", value: "35", trend: null, color: "bg-rose-50 text-rose-600" },
+          { label: "Jami mahsulotlar", value: "225", trend: "+23 ta", color: "bg-indigo-50 text-indigo-600", path: "/jamimaxsulotlar" },
+          { label: "Faol e'lonlar", value: "156", trend: null, color: "bg-emerald-50 text-emerald-600", path: "/faolelonlar" },
+          { label: "Qolgan mahsulotlar", value: "34", trend: null, color: "bg-amber-50 text-amber-600", path: "/qolganmahsulotlar" },
+          { label: "Nofaol", value: "35", trend: null, color: "bg-rose-50 text-rose-600", path: "/nofaol" },
         ].map((stat, i) => (
-          <div key={i} className="bg-white rounded-[30px] p-6 shadow-sm flex items-center gap-4">
+          <div key={i}
+              onClick={() => navigate(stat.path)}
+          className="bg-white rounded-[30px] p-6 shadow-sm flex items-center gap-4">
             <div className={`p-3 rounded-full ${stat.color}`}>
                <CheckCircle size={20} />
             </div>
