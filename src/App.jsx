@@ -21,9 +21,10 @@ import Bekorqilingan from "./Components/ClickOpenPages/BekorQilingan";
 import Kelmagan from "./Components/ClickOpenPages/Kelmagan";
 import JamiStamatologlar from "./Components/ClickOpenPages/JamiStmatologlar";
 import Kutilmoqda from "./Components/ClickOpenPages/Kutilmoqda";
-
+import Logo from "./assets/dentago.png";
 const App = () => {
   return (
+    <div>
     <Routes>
       {/* 1. Saytga kirganda birinchi bo'lib Login sahifasi ochiladi */}
       <Route path="/login" element={<Login />} />
@@ -55,6 +56,14 @@ const App = () => {
       {/* 3. Foydalanuvchi boshqa yo'l yozsa, login sahifasiga yuboramiz */}
       <Route path="*" element={<Navigate to="/login" replace />} />
     </Routes>
+
+    <a href="https://t.me/dentalsoft_uz" target="_blank" rel="noopener noreferrer" className="fixed bottom-5 right-5 z-50 w-14 h-14 flex items-center justify-center bg-white border border-[#00BCE4] rounded-full cursor-pointer shadow-lg">
+        {/* <Link className="text-white" size={24} /> */}
+        <img src={Logo} alt="" />
+      </a>
+
+
+    </div>
   );
 };
 

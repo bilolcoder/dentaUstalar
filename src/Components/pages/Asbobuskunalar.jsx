@@ -41,21 +41,21 @@ const Asbobuskunalar = () => {
         </div>
 
         <div className="flex items-center bg-white rounded-full shadow-md px-4 py-2 gap-4
-                            w-full md:w-[350px] md:hover:md:w-[63%]
-                            transition-all duration-700 h-[50px]">
-                        <IoSearch />
-                            <input
-                                type="text"
-                                placeholder="Search"
-                                className="flex-1 bg-transparent outline-none text-[#707EAE] placeholder-[#A3AED0]"
-                            />
-                            <FaRegBell />
-                            <img
-                                src="https://i.pravatar.cc/100"
-                                alt="user"
-                                className="w-[36px] h-[36px] rounded-full object-cover"
-                            />
-                        </div>
+                              w-full md:w-[350px] md:hover:md:w-[63%]
+                              transition-all duration-700 h-[50px]">
+                          <IoSearch />
+                              <input
+                                  type="text"
+                                  placeholder="Search"
+                                  className="flex-1 bg-transparent outline-none text-[#707EAE] placeholder-[#A3AED0]"
+                              />
+                              <FaRegBell />
+                              <img
+                                  src="https://i.pravatar.cc/100"
+                                  alt="user"
+                                  className="w-[36px] h-[36px] rounded-full object-cover"
+                              />
+                          </div>
       </header>
 
       {/* STATISTICS CARDS - Figma Style */}
